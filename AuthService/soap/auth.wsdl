@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
+             xmlns:tns="http://localhost/~matheus/soap/Auth_Manager" 
+			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+			 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			 xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" 
+			 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+			 name="Auth_Manager" 
+			 targetNamespace="http://localhost/~matheus/soap/Auth_Manager">
+  <portType name="Auth_ManagerPort">
+    <operation name="isAuthentic">
+      <documentation>isAuthentic</documentation>
+      <input message="tns:isAuthenticRequest"/>
+	  <output message="tns:isAuthenticResponse"/>
+    </operation>
+  </portType>
+  <binding name="Auth_ManagerBinding" type="tns:Auth_ManagerPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="isAuthentic">
+      <soap:operation soapAction="http://localhost/public/soap-service#isAuthentic"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/public/soap-service"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/public/soap-service"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="Auth_ManagerService">
+    <port name="Auth_ManagerPort" binding="tns:Auth_ManagerBinding">
+      <soap:address location="http://localhost/~matheus/soap/server.php"/>
+    </port>
+  </service>
+  <message name="isAuthenticRequest">
+    <part name="cpf" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+  </message>   
+  <message name="isAuthenticResponse">
+    <part name="result" type="xsd:string"/>
+  </message> 
+</definitions>
