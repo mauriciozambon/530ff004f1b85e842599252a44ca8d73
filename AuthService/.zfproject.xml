@@ -10,6 +10,8 @@
       <controllersDirectory>
         <controllerFile controllerName="Index">
           <actionMethod actionName="index"/>
+          <actionMethod actionName="soap"/>
+          <actionMethod actionName="wsdl"/>
         </controllerFile>
         <controllerFile controllerName="Error"/>
         <controllerFile controllerName="Login">
@@ -35,6 +37,12 @@
           <viewControllerScriptsDirectory forControllerName="Login"/>
           <viewControllerScriptsDirectory forControllerName="Login">
             <viewScriptFile forActionName="authenticate"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="wsdl"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

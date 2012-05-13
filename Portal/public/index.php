@@ -14,6 +14,10 @@ set_include_path(implode(PATH_SEPARATOR, array(
     get_include_path(),
 )));
 
+#!IMPORTANT
+#Change the path below to match your Zend library folder.
+ini_set('include_path', '/Users/mauriciozambon/Sites/mc747/ZendFramework/library');
+
 /** Zend_Application */
 require_once 'Zend/Application.php';
 

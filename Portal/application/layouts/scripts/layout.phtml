@@ -1,1 +1,23 @@
-<?php echo $this->layout()->content; ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Portal</title>
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+<body>
+	<div id='banner'>
+	<div id='main_menu'></div>
+		<div id='login'>
+			<a id='logo' href="login/index/">Login</a>
+		</div>
+		<div id='logo'>
+			<img id='logo' alt="StOA" src="img/logo.png">
+		</div>
+		
+	</div>
+	<div id='side_menu'></div>
+	<div id='content'>
+		<?php echo $this->layout()->content; ?>
+		</div>
+</body>
+</html>

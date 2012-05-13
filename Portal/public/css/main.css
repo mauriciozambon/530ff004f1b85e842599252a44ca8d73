@@ -1,0 +1,70 @@
+@CHARSET "UTF-8";
+
+html, body {
+	width: 100%;
+	height:100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-family: Geneva, “Lucida Sans”, “Lucida Grande”, “Lucida Sans Unicode”, Verdana, sans-serif;
+	size: 10px !important;
+}
+
+a {
+	font-weight: bold;
+	size: 10px;
+	color: black;
+}
+
+#banner {
+	width: 100%;
+	height: 25%;
+	background-image: url(../img/banner.png);
+	background-repeat: repeat-x;
+}
+
+#side_menu {
+	width: 20%;
+	height:75%;
+	background-image: url(../img/side_menu.png);
+	background-repeat: repeat-x;	
+	float: left;
+}
+
+#main_menu {
+	width: 100%;
+	height: 25%;
+	position: relative;
+	top: 75%;
+	background-image: url(../img/main_menu.png);
+	background-repeat: repeat-x;	 
+}
+
+#content {
+	width: 80%;
+	height: 75%;
+	float: right;
+}
+
+#login {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 3.75%;
+	background-image: url(../img/main_menu.png);
+	background-repeat: repeat-x;
+	text-align: right;
+	width: 100%;
+}
+
+div#logo {
+	position: absolute;
+	/*float: left;*/
+	top: 5%;
+	padding-left: 50px;
+	height: 12.50%;
+}
+
+img#logo {
+	position: relative;
+	height: 100%;
+}

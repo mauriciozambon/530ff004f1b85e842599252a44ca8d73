@@ -15,29 +15,18 @@ class LoginController extends Zend_Controller_Action {
 	}
 	
 	public function authenticateAction() {
-		if ($this->_request->getMethod () == 'GET') {
-			$user = $this->_request->getParam ( 'user' );
-			$password = $this->_request->getParam ( 'password' );
-			
-			/*
-			 * response['error'] 			string 
-			 * response['authenticated']	boolean
-			 */
-			$response = array ();
-			$response ['error'] = null;
-			
-			if (is_null ( $user ) || is_null ( $password )) {
-				$response ['error'] = "Missing user and/or password";
-			} else {
-				if ($this->verifyUserPassword ( $user, $password )) {
-					$response ['authenticated'] = true;
-				} else {
-					$response ['error'] = "Wrong user/password";
-				}
-			}
-		}
+		// disable layouts and renderers
+		$this->getHelper('viewRenderer')->setNoRender(true);
 		
-		$this->view->assign ( 'response', json_encode ( $response ) );
+		// initialize server and set URI
+		$server = new Zend_Soap_Server(null, 
+										array('uri' => Helpers_Config::get()->soap->server->uri));
+		
+		// set SOAP service class
+		$server->setClass(Helpers_Config::get()->soap->server->class);
+		
+		// handle request
+		$server->handle();
 	}
 	
 	/*

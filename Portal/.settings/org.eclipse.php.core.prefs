@@ -1,0 +1,4 @@
+#Sat May 12 14:38:22 BRT 2012
+eclipse.preferences.version=1
+include_path=5;org.zend.php.framework.CONTAINER\u00050;/Portal
+use_asp_tags_as_php=false
