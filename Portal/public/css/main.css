@@ -6,13 +6,13 @@ html, body {
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	font-family: Geneva, “Lucida Sans”, “Lucida Grande”, “Lucida Sans Unicode”, Verdana, sans-serif;
-	size: 10px !important;
+	font-size: 12px !important;
 }
 
 a {
 	font-weight: bold;
-	size: 10px;
 	color: black;
+	height: 100%;
 }
 
 #banner {
@@ -36,7 +36,16 @@ a {
 	position: relative;
 	top: 75%;
 	background-image: url(../img/main_menu.png);
-	background-repeat: repeat-x;	 
+	background-repeat: repeat-x;
+	border: none;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	font: 67.5% 'Lucida Sans Unicode', 'Bitstream Vera Sans',
+		'Trebuchet Unicode MS', 'Lucida Grande', Verdana, Helvetica,
+		sans-serif;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 #content {

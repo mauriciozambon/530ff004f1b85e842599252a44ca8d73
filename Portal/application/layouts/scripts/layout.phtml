@@ -1,19 +1,22 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Portal</title>
-	<link rel="stylesheet" href="css/main.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StOA</title>
+<?php echo $this->headLink()->appendStylesheet($this->baseUrl() . '/css/main.css'); ?>
+<?php echo $this->headLink()->appendStylesheet($this->baseUrl() . '/css/menu.css'); ?>
 </head>
 <body>
 	<div id='banner'>
-	<div id='main_menu'></div>
+		<div id='main_menu'><?php echo $this->partial('partials/menu.phtml'); ?></div>
 		<div id='login'>
 			<a id='logo' href="login/index/">Login</a>
 		</div>
 		<div id='logo'>
-			<img id='logo' alt="StOA" src="img/logo.png">
+			<img id='logo' alt="StOA"
+				src="<?php echo $this->baseUrl(); ?>/img/logo.png">
 		</div>
-		
+
 	</div>
 	<div id='side_menu'></div>
 	<div id='content'>
