@@ -1,0 +1,13 @@
+<h3>Login de Clientes</h3>
+
+<?php if (isset($this->error) && $this->error != ""): ?>
+    <div class="error">
+        <span><?php echo $this->error; ?></span>
+    </div><br />
+<?php endif; ?>
+
+<form id="login_form" action="" method="POST">
+    <label>CPF: </label><input type="text" name="cpf" id="cpf" size="15" /><br />
+    <label>Senha:</label><input type="text" name="senha" id="senha" size="15" /><br />
+    <input type="submit" value="Entrar" />
+</form>
