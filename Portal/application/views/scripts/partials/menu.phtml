@@ -1,0 +1,16 @@
+<ul>
+<?php
+
+if (is_null ( Helpers_Session::getInstance ()->getSessVar ( 'menu' ) )) {
+	
+	// $categories = Helpers_Connector::requestSoapService('categories', 'get');
+	$categories = array ('Eletrodomésticos', 'Filme', 'DVD' );
+	
+	foreach ( $categories as $category ) {
+		echo "<li><a href='/products/" . $category . "'><div class='menu-item'>$category</div></a></li>";
+	}
+	
+	Helpers_Session::getInstance ()->setSessVar ( 'menu', array () );
+}
+?>
+</ul>
