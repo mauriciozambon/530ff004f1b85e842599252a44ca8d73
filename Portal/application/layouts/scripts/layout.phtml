@@ -3,8 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>StOA</title>
-<?php echo $this->headLink()->appendStylesheet($this->baseUrl() . '/css/main.css'); ?>
-<?php echo $this->headLink()->appendStylesheet($this->baseUrl() . '/css/menu.css'); ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<?php echo $this->headLink()->appendStylesheet($this->baseUrl() . '/css/main.css')
+							->appendStylesheet($this->baseUrl() . '/css/menu.css'); ?>
+<?php echo $this->headScript()->appendFile($this->baseUrl() . '/js/main.js')?>
 </head>
 <body>
 	<div id='banner'>

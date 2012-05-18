@@ -11,7 +11,6 @@
 }
 
 #main_menu ul { /*background:#333333;*/
-	height: 35px;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -22,11 +21,12 @@
 	float: left;
 	padding: 0px;
 	height: 100%;
-	
 }
 
-#main_menu li div {
-	display:table-cell; vertical-align:middle;
+
+#main_menu li > div {
+	vertical-align: middle !important;
+	height: 100% !important;
 }
 
 #main_menu li a {
@@ -40,7 +40,7 @@
 	text-align: center;
 	text-decoration: none;
 	vertical-align: middle;
-	height: 100%;
+	/*height: 100%;*/
 }
 
 #main_menu li a:hover,#main_menu ul li:hover a {
@@ -51,7 +51,6 @@
 
 #main_menu li ul { /*background:#333333;*/
 	display: none;
-	height: auto;
 	padding: 0px;
 	margin: 0px;
 	border: 0px;
@@ -81,7 +80,6 @@
 
 #main_menu li ul a {
 	display: block;
-	height: 100%;
 	font-size: 12px;
 	font-style: normal;
 	margin: 0px;

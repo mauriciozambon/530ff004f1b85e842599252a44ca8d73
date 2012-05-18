@@ -7,7 +7,7 @@ if (is_null ( Helpers_Session::getInstance ()->getSessVar ( 'menu' ) )) {
 	$categories = array ('Eletrodomésticos', 'Filme', 'DVD' );
 	
 	foreach ( $categories as $category ) {
-		echo "<li><a href='/products/" . $category . "'><div class='menu-item'>$category</div></a></li>";
+		echo "<li><div class='menu-item'><a href='/products/" . $category . "'>$category</a></div></li>";
 	}
 	
 	Helpers_Session::getInstance ()->setSessVar ( 'menu', array () );
