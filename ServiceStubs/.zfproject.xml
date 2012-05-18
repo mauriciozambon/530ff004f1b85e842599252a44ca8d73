@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<projectProfile type="default" version="1.11.11">
+  <projectDirectory>
+    <projectProfileFile filesystemName=".zfproject.xml"/>
+    <applicationDirectory classNamePrefix="Application_">
+      <apisDirectory enabled="false"/>
+      <configsDirectory>
+        <applicationConfigFile type="ini"/>
+      </configsDirectory>
+      <controllersDirectory>
+        <controllerFile controllerName="Index">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Error"/>
+        <controllerFile controllerName="Estoque">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="soap"/>
+          <actionMethod actionName="wsdl"/>
+        </controllerFile>
+        <controllerFile controllerName="Cliente">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="soap"/>
+          <actionMethod actionName="wsdl"/>
+        </controllerFile>
+        <controllerFile controllerName="Produto">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="soap"/>
+          <actionMethod actionName="wsdl"/>
+        </controllerFile>
+        <controllerFile controllerName="Credito">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="wsdl"/>
+          <actionMethod actionName="soap"/>
+        </controllerFile>
+        <controllerFile controllerName="Cartao">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="soap"/>
+          <actionMethod actionName="wsdl"/>
+        </controllerFile>
+        <controllerFile controllerName="Logistica">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="wsdl"/>
+          <actionMethod actionName="soap"/>
+        </controllerFile>
+        <controllerFile controllerName="Autenticacao">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Atendimento">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="soap"/>
+          <actionMethod actionName="wsdl"/>
+        </controllerFile>
+        <controllerFile controllerName="Endereco">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="soap"/>
+          <actionMethod actionName="wsdl"/>
+        </controllerFile>
+        <controllerFile controllerName="Banco">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="soap"/>
+          <actionMethod actionName="wsdl"/>
+        </controllerFile>
+      </controllersDirectory>
+      <formsDirectory enabled="false"/>
+      <layoutsDirectory enabled="false"/>
+      <modelsDirectory/>
+      <modulesDirectory enabled="false"/>
+      <viewsDirectory>
+        <viewScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Error">
+            <viewScriptFile forActionName="error"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Estoque">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Cliente">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Produto">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Credito">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Cartao">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Logistica">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Autenticacao">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Atendimento">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Endereco">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Banco">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Estoque">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Estoque">
+            <viewScriptFile forActionName="wsdl"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Endereco">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Endereco">
+            <viewScriptFile forActionName="wsdl"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Cliente">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Cliente">
+            <viewScriptFile forActionName="wsdl"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Produto">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Produto">
+            <viewScriptFile forActionName="wsdl"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Credito">
+            <viewScriptFile forActionName="wsdl"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Credito">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Cartao">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Cartao">
+            <viewScriptFile forActionName="wsdl"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Logistica">
+            <viewScriptFile forActionName="wsdl"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Logistica">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Atendimento">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Banco">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Banco">
+            <viewScriptFile forActionName="wsdl"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Atendimento">
+            <viewScriptFile forActionName="wsdl"/>
+          </viewControllerScriptsDirectory>
+        </viewScriptsDirectory>
+        <viewHelpersDirectory/>
+        <viewFiltersDirectory enabled="false"/>
+      </viewsDirectory>
+      <bootstrapFile filesystemName="Bootstrap.php"/>
+    </applicationDirectory>
+    <dataDirectory enabled="false">
+      <cacheDirectory enabled="false"/>
+      <searchIndexesDirectory enabled="false"/>
+      <localesDirectory enabled="false"/>
+      <logsDirectory enabled="false"/>
+      <sessionsDirectory enabled="false"/>
+      <uploadsDirectory enabled="false"/>
+    </dataDirectory>
+    <docsDirectory>
+      <file filesystemName="README.txt"/>
+    </docsDirectory>
+    <libraryDirectory>
+      <zfStandardLibraryDirectory enabled="false"/>
+    </libraryDirectory>
+    <publicDirectory>
+      <publicStylesheetsDirectory enabled="false"/>
+      <publicScriptsDirectory enabled="false"/>
+      <publicImagesDirectory enabled="false"/>
+      <publicIndexFile filesystemName="index.php"/>
+      <htaccessFile filesystemName=".htaccess"/>
+    </publicDirectory>
+    <projectProvidersDirectory enabled="false"/>
+    <temporaryDirectory enabled="false"/>
+    <testsDirectory>
+      <testPHPUnitConfigFile filesystemName="phpunit.xml"/>
+      <testPHPUnitBootstrapFile filesystemName="bootstrap.php"/>
+      <testApplicationDirectory>
+        <testApplicationControllerDirectory>
+          <testApplicationControllerFile forControllerName="Index">
+            <testApplicationActionMethod forActionName="index"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Estoque">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="soap"/>
+            <testApplicationActionMethod forActionName="wsdl"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Cliente">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="soap"/>
+            <testApplicationActionMethod forActionName="wsdl"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Produto">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="soap"/>
+            <testApplicationActionMethod forActionName="wsdl"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Credito">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="wsdl"/>
+            <testApplicationActionMethod forActionName="soap"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Cartao">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="soap"/>
+            <testApplicationActionMethod forActionName="wsdl"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Logistica">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="wsdl"/>
+            <testApplicationActionMethod forActionName="soap"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Autenticacao">
+            <testApplicationActionMethod forActionName="index"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Atendimento">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="soap"/>
+            <testApplicationActionMethod forActionName="wsdl"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Endereco">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="soap"/>
+            <testApplicationActionMethod forActionName="wsdl"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Banco">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="soap"/>
+            <testApplicationActionMethod forActionName="wsdl"/>
+          </testApplicationControllerFile>
+        </testApplicationControllerDirectory>
+      </testApplicationDirectory>
+      <testLibraryDirectory/>
+    </testsDirectory>
+  </projectDirectory>
+</projectProfile>
