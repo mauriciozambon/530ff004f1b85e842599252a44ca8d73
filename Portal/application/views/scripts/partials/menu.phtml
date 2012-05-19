@@ -1,16 +1,15 @@
 <ul>
-<?php
+    <?php
+    if (is_null(Helpers_Session::getInstance()->getSessVar('menu'))) {
 
-if (is_null ( Helpers_Session::getInstance ()->getSessVar ( 'menu' ) )) {
-	
-	// $categories = Helpers_Connector::requestSoapService('categories', 'get');
-	$categories = array ('Eletrodomésticos', 'Filme', 'DVD' );
-	
-	foreach ( $categories as $category ) {
-		echo "<li><div class='menu-item'><a href='/products/" . $category . "'>$category</a></div></li>";
-	}
-	
-	Helpers_Session::getInstance ()->setSessVar ( 'menu', array () );
-}
-?>
+        // $categories = Helpers_Connector::requestSoapService('categories', 'get');
+        $categories = array('Eletrodom√©sticos', 'Filme', 'DVD');
+
+        foreach ($categories as $category) {
+            echo "<li><div class='menu-item'><a href='/products/" . $category . "'>$category</a></div></li>";
+        }
+
+        Helpers_Session::getInstance()->setSessVar('menu', array());
+    }
+    ?>
 </ul>
