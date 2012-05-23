@@ -16,7 +16,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
 
 #!IMPORTANT
 #Change the path below to match your Zend library folder.
-ini_set('include_path', 'C:\Users\Lucas\Dropbox\Pessoal\MC747\ZendFramework\library');
+ini_set('include_path', '/Users/mauriciozambon/Sites/mc747/ZendFramework/library');
 
 /** Zend_Application */
 require_once 'Zend/Application.php';
