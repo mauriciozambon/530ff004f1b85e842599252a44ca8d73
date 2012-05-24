@@ -16,6 +16,26 @@
           <actionMethod actionName="index"/>
           <actionMethod actionName="logout"/>
         </controllerFile>
+        <controllerFile controllerName="Produtos">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="listar"/>
+          <actionMethod actionName="detalhes"/>
+        </controllerFile>
+        <controllerFile controllerName="Estoque">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="produtoInfo"/>
+        </controllerFile>
+        <controllerFile controllerName="CC">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="listaCartoes"/>
+        </controllerFile>
+        <controllerFile controllerName="Banco">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="ProtecaoAoCredito">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="consulta"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory>
@@ -38,6 +58,36 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Login">
             <viewScriptFile forActionName="logout"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Produtos">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Produtos">
+            <viewScriptFile forActionName="listar"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Produtos">
+            <viewScriptFile forActionName="detalhes"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Estoque">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Estoque">
+            <viewScriptFile forActionName="produtoInfo"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="CC">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="CC">
+            <viewScriptFile forActionName="listaCartoes"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Banco">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="ProtecaoAoCredito">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="ProtecaoAoCredito">
+            <viewScriptFile forActionName="consulta"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
@@ -72,8 +122,8 @@
       <testPHPUnitConfigFile filesystemName="phpunit.xml"/>
       <testApplicationDirectory>
         <testApplicationControllerDirectory>
-          <testApplicationControllerFile filesystemName="IndexControllerTest.php"/>
-          <testApplicationControllerFile filesystemName="LoginControllerTest.php"/>
+          <testApplicationControllerFile/>
+          <testApplicationControllerFile/>
         </testApplicationControllerDirectory>
       </testApplicationDirectory>
       <testLibraryDirectory/>

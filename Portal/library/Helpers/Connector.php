@@ -21,13 +21,18 @@ class Helpers_Connector {
      * @param array $parameters       	
      * @return array
      */
-    public function requestSoapService($service_name, $function_name, $parameters) {
+    public function requestSoapService($service_name, $function_name, $parameters = array()) {
         self::getInstance();
 
         try {
-            $client = new Zend_Soap_Client(Helpers_Config::get()->service->$service_name->wsdl);
+            if (!is_null(Helpers_Config::get()->service->$service_name->soap)) {
+                $client = new Zend_Soap_Client(null, array('uri' => Helpers_Config::get()->service->$service_name->soap,
+                            'location' => Helpers_Config::get()->service->$service_name->soap));
+            } else {
+                $client = new Zend_Soap_Client(Helpers_Config::get()->service->$service_name->wsdl);
+            }
 
-            $result = call_user_func_array(Array($client, $function_name), $parameters);
+            $result = $client->__call($function_name, $parameters);
 
             return $result;
         } catch (SoapFault $s) {

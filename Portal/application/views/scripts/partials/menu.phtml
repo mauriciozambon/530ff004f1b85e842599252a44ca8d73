@@ -2,11 +2,12 @@
     <?php
     if (is_null(Helpers_Session::getInstance()->getSessVar('menu'))) {
 
-        // $categories = Helpers_Connector::requestSoapService('categories', 'get');
-        $categories = array('Eletrodomésticos', 'Filme', 'DVD');
-
+        $categories = Helpers_Connector::requestSoapService('produtos', 'listarCategorias');
+        
         foreach ($categories as $category) {
-            echo "<li><div class='menu-item'><a href='/products/" . $category . "'>$category</a></div></li>";
+            if (is_null($category[1])) {
+                echo "<li><div class='menu-item'><a href='". $this->baseUrl() . "/produtos/listar/categoria/" . $category[0] . "'>$category[2]</a></div></li>";
+            }
         }
 
         Helpers_Session::getInstance()->setSessVar('menu', array());
