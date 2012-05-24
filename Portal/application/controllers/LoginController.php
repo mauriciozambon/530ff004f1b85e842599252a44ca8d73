@@ -16,7 +16,8 @@ class LoginController extends Zend_Controller_Action {
                 $session = Helpers_Session::getInstance();
                 $session->setSessVar("authenticated", true);
                 $session->setSessVar("cpf", $params['cpf']);
-                $this->_helper->redirector('index', 'index');
+                //$this->_helper->getHelper('redirector')->gotoUrl('/produtos/listar/categoria/1');
+                header("Location: " . '/Portal/public/produtos/listar/categoria/1');
             } else {
                 $this->view->error = $auth;
             }

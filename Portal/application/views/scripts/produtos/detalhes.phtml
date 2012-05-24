@@ -26,12 +26,12 @@
         <td class="detail"><b>Altura: </b><?php echo $this->detalhes[10]; ?></h3></td>
     </tr>
     <tr>
-        <td>
+        <td class="detail">
             <?php
             if ($this->preco->ReturnProductInfoResult->Price == 0) {
-                echo "<td>Indisponível</td>";
+                echo "Indisponível";
             } else {
-                echo "<td><b>Preço: </b>" . $this->preco->ReturnProductInfoResult->Price . ",00</td>";
+                echo "<b>Preço: </b>" . $this->preco->ReturnProductInfoResult->Price . ",00";
             }
             ?>
         </td>

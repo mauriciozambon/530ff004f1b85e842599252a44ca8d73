@@ -28,7 +28,7 @@ class ProdutosController extends Zend_Controller_Action {
             $imagens = array();
             srand(999999);
             foreach ($produtos as $produto) {
-                $preco[] = Helpers_Connector::requestSoapService('estoque', 'returnProductInfo', array(array('ID' => $produto[0])));
+                //$preco[] = Helpers_Connector::requestSoapService('estoque', 'returnProductInfo', array(array('ID' => $produto[0])));
                 //$preco = array_merge($preco, array(rand(1000, 4000)));
                 $imagens[] = Helpers_Connector::requestSoapService('produtos', 'imagensProduto', array($produto[0]));
             }

@@ -28,10 +28,10 @@
                     <?php
                     if ($this->authenticated) {
                         $ref = $this->baseUrl() . '/login/logout';
-                        echo("<a id='logo' href='" . $ref . "'>Logout</a>");
+                        echo("<a id='login' href='" . $ref . "'>Logout</a>");
                     } else {
                         $ref = $this->baseUrl() . '/login/index';
-                        echo("<a id='logo' href='" . $ref . "'>Login</a>");
+                        echo("<a id='login' href='" . $ref . "'>Login</a>");
                     }
                     ?>
                 </div>
