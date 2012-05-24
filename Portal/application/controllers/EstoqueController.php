@@ -17,7 +17,8 @@ class EstoqueController extends Zend_Controller_Action
     {
         $id = $this->_request->getParam('id');
         if (!is_null($id)) {
-            var_dump(Helpers_Connector::requestSoapService('estoque', 'returnProductInfo', array(array('ID' => $id))));
+            $info = Helpers_Connector::requestSoapService('estoque', 'returnProductInfo', array(array('ID' => $id)));
+            var_dump($info->ReturnProductInfoResult->Price);
         } else {
             $this->view->assign('Produto não encontrado.');
         }

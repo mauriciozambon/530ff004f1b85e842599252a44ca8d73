@@ -1,4 +1,44 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Produtos</b> and script/action name <b>detalhes</b></p>
-</div>
+<table id="prod_details">
+    <tr>
+        <td class="prod_name" colspan="2"><h3><?php echo $this->detalhes[1]; ?></h3></td>
+    </tr>
+    <tr>
+        <td rowspan="9" class="photos">
+            <?php foreach ($this->imagens as $imagem): ?>
+                <a class ="fancybox-effects-d" href="<?php echo $imagem[1]; ?>" rel="lightbox" title="<?php echo $imagem[2]; ?>"><img class="prod_thumb" src="<?php echo $imagem[0]; ?>"/></a>
+                <br/>
+            <?php endforeach; ?>        
+        </td>  
+    </tr>
+    <tr>
+        <td class="detail"><b>Marca: </b><?php echo $this->detalhes[5]; ?></h3></td>
+    </tr>
+    <tr>
+        <td class="detail"><b>Peso: </b><?php echo $this->detalhes[7]; ?></h3></td>
+    </tr>
+    <tr>
+        <td class="detail"><b>Comprimento: </b><?php echo $this->detalhes[8]; ?></h3></td>
+    </tr>
+    <tr>
+        <td class="detail"><b>Largura: </b><?php echo $this->detalhes[9]; ?></h3></td>
+    </tr>
+    <tr>
+        <td class="detail"><b>Altura: </b><?php echo $this->detalhes[10]; ?></h3></td>
+    </tr>
+    <tr>
+        <td>
+            <?php
+            if ($this->preco->ReturnProductInfoResult->Price == 0) {
+                echo "<td>Indisponível</td>";
+            } else {
+                echo "<td><b>Preço: </b>" . $this->preco->ReturnProductInfoResult->Price . ",00</td>";
+            }
+            ?>
+        </td>
+    </tr>
+    <tr>
+        <td class="detail">
+<?php echo "<div class='outer_text'>" . $this->detalhes[6] . "</div>"; ?>
+        </td>
+    </tr>
+</table>

@@ -25,12 +25,12 @@ class Helpers_Connector {
         self::getInstance();
 
         try {
-            if (!is_null(Helpers_Config::get()->service->$service_name->soap)) {
+            /*if (!is_null(Helpers_Config::get()->service->$service_name->soap)) {
                 $client = new Zend_Soap_Client(null, array('uri' => Helpers_Config::get()->service->$service_name->soap,
                             'location' => Helpers_Config::get()->service->$service_name->soap));
-            } else {
+            } else {*/
                 $client = new Zend_Soap_Client(Helpers_Config::get()->service->$service_name->wsdl);
-            }
+            //}
 
             $result = $client->__call($function_name, $parameters);
 
