@@ -29,7 +29,7 @@ class Helpers_Connector {
               $client = new Zend_Soap_Client(null, array('uri' => Helpers_Config::get()->service->$service_name->soap,
               'location' => Helpers_Config::get()->service->$service_name->soap));
               } else { */
-            if (!is_null(Helpers_Config::get()->service->$service_name->soap) && !is_null(Helpers_Config::get()->service->$service_name->soap->version)) {
+            if (isset(Helpers_Config::get()->service->$service_name->soap) && isset(Helpers_Config::get()->service->$service_name->soap->version)) {
                 $client = new Zend_Soap_Client(Helpers_Config::get()->service->$service_name->wsdl,
                                 array('soap_version' => SOAP_1_1));
             } else {
