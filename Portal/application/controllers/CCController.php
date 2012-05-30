@@ -16,7 +16,8 @@ class CCController extends Zend_Controller_Action
     public function listaCartoesAction()
     {
 
-            var_dump(Helpers_Connector::requestSoapService('cc', 'validaCompra', array(10, "Joao", "visa", "1234.1234.1234.1234", "12/12", "123", 1)));
+            //var_dump(Helpers_Connector::requestSoapService('cc', 'validaCompra', array(10, "Joao", "visa", "1234.1234.1234.1234", "12/12", 123, 1)));
+            var_dump(Helpers_Connector::requestSoapService('cc', 'listaCartoes'));
 
     }
 

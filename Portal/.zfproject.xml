@@ -36,6 +36,11 @@
           <actionMethod actionName="index"/>
           <actionMethod actionName="consulta"/>
         </controllerFile>
+        <controllerFile controllerName="Enderecos">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="cep"/>
+          <actionMethod actionName="procurar"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory>
@@ -88,6 +93,15 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="ProtecaoAoCredito">
             <viewScriptFile forActionName="consulta"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Enderecos">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Enderecos">
+            <viewScriptFile forActionName="cep"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Enderecos">
+            <viewScriptFile forActionName="procurar"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
