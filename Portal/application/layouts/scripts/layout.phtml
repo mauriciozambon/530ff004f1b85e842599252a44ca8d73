@@ -26,7 +26,7 @@
             <div id='banner'>
                 <div id='login'>
                     <?php
-                    if ($this->authenticated) {
+                    if (Helpers_Session::getInstance()->getSessVar("authenticated")) {
                         $ref = $this->baseUrl() . '/login/logout';
                         echo("<a id='login' href='" . $ref . "'>Logout</a>");
                     } else {

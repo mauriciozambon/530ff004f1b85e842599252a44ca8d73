@@ -7,6 +7,14 @@ class LoginController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
+
+        $authenticated = Helpers_Session::getInstance()->getSessVar("authenticated");
+        
+        if ($authenticated) {  //Usuário já logado
+            $redirector = $this->getHelper('redirector');
+            $redirector->gotoUrl($this->view->baseUrl() . "/produtos/listar/categoria/1");
+        }
+
         if ($this->getRequest()->isPost()) {    //Se o form foi submetido: 
             $params = $this->getRequest()->getParams();
             $auth = Helpers_Connector::requestSoapService("login", "authenticate", Array($params['cpf'], $params['senha']));
@@ -16,8 +24,9 @@ class LoginController extends Zend_Controller_Action {
                 $session = Helpers_Session::getInstance();
                 $session->setSessVar("authenticated", true);
                 $session->setSessVar("cpf", $params['cpf']);
-                //$this->_helper->getHelper('redirector')->gotoUrl('/produtos/listar/categoria/1');
-                header("Location: " . '/Portal/public/produtos/listar/categoria/1');
+                //$this->_helper->redirector('index', 'index');
+                $redirector = $this->getHelper('redirector');
+                $redirector->gotoUrl($this->view->baseUrl() . "/produtos/listar/categoria/1");
             } else {
                 $this->view->error = $auth;
             }
@@ -26,7 +35,7 @@ class LoginController extends Zend_Controller_Action {
 
     public function logoutAction() {
         //Kills the mothafucka's session
-        Helpers_Session::getInstance()->sessDestroy();      
+        Helpers_Session::getInstance()->sessDestroy();
     }
 
 }
