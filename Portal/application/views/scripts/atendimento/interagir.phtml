@@ -1,0 +1,22 @@
+<h3>Adicionar Interação</h3>
+
+<form action="" method="post">
+    <textarea name="descricao" rows="10" cols="60"></textarea><br />
+    <b>Status:</b><select name="status">
+        <option value="2" selected="selected">Em Andamento</option>
+        <option value="1">Fechado</option>
+    </select><br /><br />
+    <input type="submit" value="Enviar" />
+    <button id="back">Cancelar</button>
+</select>
+</form>
+
+<script type="text/javascript">
+
+    $('#back').click(function() {
+        redir = "/atendimento/consultachamado/id/<?php echo $this->id; ?>";
+        location.href = redir;
+        return false;
+    });
+    
+</script>

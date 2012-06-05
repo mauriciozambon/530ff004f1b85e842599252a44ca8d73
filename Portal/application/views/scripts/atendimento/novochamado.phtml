@@ -1,0 +1,28 @@
+<h3>Novo Chamado</h3>
+
+<form action="" method="post">
+    <label>Número do pedido:</label><input type="text" name="id_pedido" /><br /><br />
+    <label>Código do produto:</label><input type="text" name="id_produto" /><br /><br />
+    <label>Tipo do chamado:</label>
+    <select name="tipo_chamado">
+        <option value="0">Reclamação</option>
+        <option value="1">Sugestão</option>
+        <option value="2">Troca</option>
+        <option value="3">Dúvida</option>
+        <option value="4">Outro</option>
+    </select><br /><br />
+    <label for="descricao">Descrição*:</label><br />
+    <textarea id="descricao" name="descricao" rows="10" cols="60"></textarea><br /><br />   
+    <input type="submit" value="Confirmar" />
+    <button id="back">Cancelar</button>
+</select>
+</form>
+
+<script type="text/javascript">
+
+    $('#back').click(function() {
+        redir = "/atendimento/";
+        location.href = redir;
+    });
+    
+</script>

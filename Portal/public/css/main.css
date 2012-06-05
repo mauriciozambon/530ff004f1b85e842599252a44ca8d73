@@ -263,3 +263,33 @@ td.prod_name {
     padding: 10px 10px 10px 10px;
     border-radius: 5px 5px 5px 5px;
 }
+
+#table-5 {
+    background-color: #cccccc;
+	padding: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #ebebeb;
+        margin-left: auto;
+        margin-right:auto;
+}
+#table-5 td, #table-5 th {
+	padding: 1px 5px;
+}
+#table-5 thead {
+	font: normal 15px Helvetica Neue,Helvetica,sans-serif;
+	text-shadow: 0 1px 0 white;
+	color: #999;
+}
+#table-5 th {
+	text-align: left;
+	border-bottom: 1px solid #fff;
+}
+#table-5 td {
+	font-size: 14px;
+}
+#table-5 tr:hover {
+	background-color: #fff;
+        cursor: pointer;
+}

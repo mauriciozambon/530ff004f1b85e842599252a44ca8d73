@@ -19,12 +19,10 @@ class LoginController extends Zend_Controller_Action {
             $params = $this->getRequest()->getParams();
             $auth = Helpers_Connector::requestSoapService("login", "authenticate", Array($params['cpf'], $params['senha']));
 
-            if ($auth == "1") {
-                //TODO: Setar variaveis de sessao e redirecionar pro index da loja
+            if ($auth == "1") {                
                 $session = Helpers_Session::getInstance();
                 $session->setSessVar("authenticated", true);
-                $session->setSessVar("cpf", $params['cpf']);
-                //$this->_helper->redirector('index', 'index');
+                $session->setSessVar("cpf", $params['cpf']);                
                 $redirector = $this->getHelper('redirector');
                 $redirector->gotoUrl($this->view->baseUrl() . "/produtos/listar/categoria/1");
             } else {

@@ -1,0 +1,135 @@
+<button id="back"><< Voltar à lista de chamados</button>
+<h3>Dados do chamado:</h3>
+<table id="table-5">
+    <tr>
+        <th>Data de abertura</th>
+        <th>Tipo do Chamado</th>
+        <th>Número do pedido</th>
+        <th>Código do produto</th>
+    </tr>
+    <tr>
+        <td>
+            <?php echo date("d/m/Y", strtotime($this->chamado->Data)); ?>
+        </td>
+        <td>
+            <?php
+            switch ($this->chamado->TipoChamado) {
+                case 0:
+                    echo "Reclamação";
+                    break;
+                case 1:
+                    echo "Sugestão";
+                    break;
+                case 2:
+                    echo "Troca";
+                    break;
+                case 3:
+                    echo "Dúvida";
+                    break;
+                default:
+                    echo "Outro";
+                    break;
+            }
+            ?>
+        </td>
+        <td>
+            <?php echo $this->chamado->IdPedido; ?>
+        </td>
+        <td>
+            <?php echo $this->chamado->IdProduto; ?>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <b>Descrição:</b> <?php echo $this->chamado->Descricao; ?>
+        </td>
+    </tr>
+</table>
+<br />
+<h3>Interações</h3>
+<button id="interagir">Adicionar Interação</button><br /><br />
+<?php if (isset($this->chamado->Alteracoes->Alteracao)): ?>
+    <?php if (is_array($this->chamado->Alteracoes->Alteracao)): ?>
+        <?php foreach ($this->chamado->Alteracoes->Alteracao as $alteracao): ?>
+            <table id="table-5">
+                <tr>
+                    <th><?php echo date("d/m/Y", strtotime($alteracao->Data)); ?></th>
+                </tr>
+                <tr>
+                    <td><?php echo $alteracao->Descricao; ?></td>
+                </tr>
+                <tr>
+                    <td><b>Status: </b>
+                        <?php
+                        switch ($alteracao->Status) {
+                            case 0:
+                                echo "Aberto";
+                                break;
+                            case 1:
+                                echo "Fechado";
+                                break;
+                            case 2:
+                                echo "Em Andamento";
+                                break;
+                            case 3:
+                                echo "Cancelado";
+                                break;
+                            default:
+                                break;
+                        }
+                        ?>
+
+                    </td>
+                </tr>
+            </table><br />
+        <?php endforeach; ?>
+    <?php else: ?>
+        <?php $alteracao = $this->chamado->Alteracoes->Alteracao; ?>
+        <table id="table-5">
+            <tr>
+                <th><?php echo date("d/m/Y", strtotime($alteracao->Data)); ?></th>
+            </tr>
+            <tr>
+                <td><?php echo $alteracao->Descricao; ?></td>
+            </tr>
+            <tr>
+                <td><b>Status: </b>
+                    <?php
+                    switch ($alteracao->Status) {
+                        case 0:
+                            echo "Aberto";
+                            break;
+                        case 1:
+                            echo "Fechado";
+                            break;
+                        case 2:
+                            echo "Em Andamento";
+                            break;
+                        case 3:
+                            echo "Cancelado";
+                            break;
+                        default:
+                            break;
+                    }
+                    ?>
+
+                </td>
+            </tr>
+        </table><br />
+    <?php endif; ?>
+<?php else: ?>
+    Este chamado ainda não possui interações desde a sua criação.
+<?php endif; ?>
+
+<script type="text/javascript">
+    $('#interagir').click(function() {
+        redir = "/atendimento/interagir/id/<?php echo $this->chamado->Id; ?>";
+        location.href = redir;
+    });
+    $('#back').click(function() {
+        redir = "/atendimento/";
+        location.href = redir;
+    });
+       
+</script>
+

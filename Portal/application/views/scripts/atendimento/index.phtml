@@ -1,1 +1,122 @@
-<h3>Seus chamados:</h3>
+<div id="wrapper">
+    <h3>Seus chamados:</h3>
+    <button id="novochamado">Novo Chamado</button><br /><br />
+    <table id="table-5">
+        <tr>
+            <th>Data do Chamado</th>
+            <th>Descricao (Resumido)</th>
+            <th>Tipo do Chamado</th>
+            <th>Último Status</th>
+        </tr>
+        <?php if ($this->chamados !== false) : ?>
+            <?php if (is_array($this->chamados)): ?>
+                <?php foreach ($this->chamados as $chamado): ?>
+                    <tr id="<?php echo $chamado->Id; ?>">
+                        <td><?php echo date("d/m/Y", strtotime($chamado->Data)); ?></td>
+                        <td style="max-width: 300px;"><?php echo $chamado->Descricao; ?></td>
+                        <td><?php
+            switch ($chamado->TipoChamado) {
+                case 0:
+                    echo "Reclamação";
+                    break;
+                case 1:
+                    echo "Sugestão";
+                    break;
+                case 2:
+                    echo "Troca";
+                    break;
+                case 3:
+                    echo "Dúvida";
+                    break;
+                default:
+                    echo "Outro";
+                    break;
+            }
+                    ?>
+                        </td>
+                        <td>
+                            <?php
+                            switch ($chamado->UltimoStatus) {
+                                case 0:
+                                    echo "Aberto";
+                                    break;
+                                case 1:
+                                    echo "Fechado";
+                                    break;
+                                case 2:
+                                    echo "Em Andamento";
+                                    break;
+                                case 3:
+                                    echo "Cancelado";
+                                    break;
+                                default:
+                                    break;
+                            }
+                            ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <?php $chamado = $this->chamados; ?>
+                <tr id="<?php echo $chamado->Id; ?>">
+                    <td><?php echo date("d/m/Y", strtotime($chamado->Data)); ?></td>
+                    <td style="max-width: 300px;"><?php echo $chamado->Descricao; ?></td>
+                    <td><?php
+        switch ($chamado->TipoChamado) {
+            case 0:
+                echo "Reclamação";
+                break;
+            case 1:
+                echo "Sugestão";
+                break;
+            case 2:
+                echo "Troca";
+                break;
+            case 3:
+                echo "Dúvida";
+                break;
+            default:
+                echo "Outro";
+                break;
+        }
+                ?>
+                    </td>
+                    <td>
+                        <?php
+                        switch ($chamado->UltimoStatus) {
+                            case 0:
+                                echo "Aberto";
+                                break;
+                            case 1:
+                                echo "Fechado";
+                                break;
+                            case 2:
+                                echo "Em Andamento";
+                                break;
+                            case 3:
+                                echo "Cancelado";
+                                break;
+                            default:
+                                break;
+                        }
+                        ?>
+                    </td>
+                </tr>
+            <?php endif; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="4">Nenhum chamado encontrado.</td>
+            </tr>
+        <?php endif; ?>
+    </table>
+</div>
+<script type="text/javascript">
+    $('tr').click(function() {
+        redir = "/atendimento/consultachamado/id/" + $(this).attr('id');
+        location.href = redir;
+    });
+    $('#novochamado').click(function() {
+        redir = "/atendimento/novochamado/";
+        location.href = redir;
+    });
+</script>
