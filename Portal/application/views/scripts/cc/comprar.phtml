@@ -1,0 +1,34 @@
+<div class="view">
+
+    <h3>Pagamento com Cartão de Crédito</h3>
+
+    <?php if (isset($this->error) && $this->error != ""): ?>
+        <div class="error">
+            <span><?php echo $this->error; ?></span>
+        </div><br />
+    <?php endif; ?>
+
+    <b>Valor da Compra: </b><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto') + Helpers_Session::getInstance()->getSessVar('preco_frete'); ?><br/><br/>
+
+    <div class="form">
+        <form action="" method="POST">
+            <label>Nome do Titular</label><br/>
+            <input type="text" name="titular" id="titular"><br/>
+            <label>Bandeira do Cartão</label><br/>
+            <input type="text" name="bandeira" id="bandeira"><br/>
+            <label>Número do Cartão</label><br/>
+            <input type="text" name="numero" id="numero"><br/>
+            <label>Data de Validade</label><br/>
+            <input type="text" name="validade" id="validade"><br/>
+            <label>Código de Segurança</label><br/>
+            <input type="text" name="codigo" id="codigo"><br/>
+            <label>Número de Parcelas</label><br/>
+            <input type="text" name="parcelas" id="parcelas"><br/>
+            <br/>
+            <div id="buttons">
+                <input class="large awesome orange" type="submit" value="Pesquisar" />
+            </div><br/>
+        </form>
+    </div>
+
+</div>

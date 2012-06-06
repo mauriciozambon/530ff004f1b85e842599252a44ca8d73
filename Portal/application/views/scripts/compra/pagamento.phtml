@@ -1,0 +1,27 @@
+<table>
+    <tr>
+        <td>Preço do Produto</td>
+        <td><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto'); ?></td>
+    </tr>
+    <tr>
+        <td>Frete</td>
+        <td><?php echo Helpers_Session::getInstance()->getSessVar('preco_frete'); ?></td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto') + Helpers_Session::getInstance()->getSessVar('preco_frete'); ?></td>
+    </tr>
+</table>
+
+<form action="" method="POST">
+    <select id="forma_de_pagamento" name="forma_de_pagamento">
+        <option value="banco">Banco</option>
+        <?php if ($this->situacao_cpf == 'regular'): ?>
+            <option value="cc">Cartão de Crédito</option>
+        <?php endif; ?>
+    </select>
+
+    <div id="buttons">
+        <input class="large awesome orange" type="submit" value="Selecionar" />
+    </div>
+</form>

@@ -129,11 +129,26 @@ div.form {
 
 .photos {
     width: 200px;
+    text-align: center;
 }
 
 #buttons {
     width: 100%;
     text-align: center;
+}
+
+div#comprar {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a#comprar {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-variant:small-caps;
 }
 
 .awesome, .awesome:visited {
