@@ -123,11 +123,11 @@
 
 <script type="text/javascript">
     $('#interagir').click(function() {
-        redir = "/atendimento/interagir/id/<?php echo $this->chamado->Id; ?>";
+        redir = "<?php echo $this->baseUrl(); ?>/atendimento/interagir/id/<?php echo $this->chamado->Id; ?>";
         location.href = redir;
     });
     $('#back').click(function() {
-        redir = "/atendimento/";
+        redir = "<?php echo $this->baseUrl(); ?>/atendimento/";
         location.href = redir;
     });
        

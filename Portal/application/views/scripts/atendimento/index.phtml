@@ -112,11 +112,11 @@
 </div>
 <script type="text/javascript">
     $('tr').click(function() {
-        redir = "/atendimento/consultachamado/id/" + $(this).attr('id');
+        redir = "<?php echo $this->baseUrl(); ?>/atendimento/consultachamado/id/" + $(this).attr('id');
         location.href = redir;
     });
     $('#novochamado').click(function() {
-        redir = "/atendimento/novochamado/";
+        redir = "<?php echo $this->baseUrl(); ?>/atendimento/novochamado/";
         location.href = redir;
     });
 </script>

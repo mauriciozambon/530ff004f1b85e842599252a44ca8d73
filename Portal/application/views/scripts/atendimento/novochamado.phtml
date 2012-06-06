@@ -21,8 +21,9 @@
 <script type="text/javascript">
 
     $('#back').click(function() {
-        redir = "/atendimento/";
+        redir = "<?php echo $this->baseUrl(); ?>/atendimento/";
         location.href = redir;
+        return false;
     });
     
 </script>

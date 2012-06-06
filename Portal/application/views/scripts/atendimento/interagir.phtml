@@ -14,7 +14,7 @@
 <script type="text/javascript">
 
     $('#back').click(function() {
-        redir = "/atendimento/consultachamado/id/<?php echo $this->id; ?>";
+        redir = "<?php echo $this->baseUrl(); ?>/atendimento/consultachamado/id/<?php echo $this->id; ?>";
         location.href = redir;
         return false;
     });
