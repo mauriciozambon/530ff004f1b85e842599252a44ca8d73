@@ -47,6 +47,7 @@
           <actionMethod actionName="index"/>
           <actionMethod actionName="endereco"/>
           <actionMethod actionName="pagamento"/>
+          <actionMethod actionName="sucesso"/>
         </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
@@ -124,6 +125,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="CC">
             <viewScriptFile forActionName="comprar"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Compra">
+            <viewScriptFile forActionName="sucesso"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

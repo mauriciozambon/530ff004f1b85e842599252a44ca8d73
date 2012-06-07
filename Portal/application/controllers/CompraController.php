@@ -1,16 +1,20 @@
 <?php
 
-class CompraController extends Zend_Controller_Action {
+class CompraController extends Zend_Controller_Action
+{
 
-    public function init() {
+    public function init()
+    {
         /* Initialize action controller here */
     }
 
-    public function indexAction() {
+    public function indexAction()
+    {
         // action body
     }
 
-    public function enderecoAction() {
+    public function enderecoAction()
+    {
         if ($this->getRequest()->isPost()) {
             $cep = $this->_request->getParam('cep');
             if (!is_null($cep)) {
@@ -37,9 +41,11 @@ class CompraController extends Zend_Controller_Action {
                 $this->view->assign('erro', 'Endereço não encontrado.');
             }
         }
+        
     }
 
-    public function pagamentoAction() {
+    public function pagamentoAction()
+    {
         if ($this->getRequest()->isPost()) {
             $forma_de_pagamento = $this->_request->getParam('forma_de_pagamento');
             $redirector = $this->getHelper('redirector');
@@ -59,5 +65,13 @@ class CompraController extends Zend_Controller_Action {
         $this->view->assign('situacao_cpf', $situacao->consultaCPFResult->situacao);
     }
 
+    public function sucessoAction()
+    {
+        // action body
+    }
+
+
 }
+
+
 
