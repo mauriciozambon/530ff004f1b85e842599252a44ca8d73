@@ -41,9 +41,9 @@ class Helpers_Connector {
             
             return $result;
         } catch (SoapFault $s) {
-            die('ERROR: [' . $s->faultcode . '] ' . $s->faultstring);
+            return array('error' => true);
         } catch (Exception $e) {
-            die('ERROR: ' . $e->getMessage());
+            return array('error' => true);
         }
     }
 

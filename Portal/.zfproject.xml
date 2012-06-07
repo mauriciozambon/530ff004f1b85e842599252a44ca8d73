@@ -33,6 +33,7 @@
         </controllerFile>
         <controllerFile controllerName="Banco">
           <actionMethod actionName="index"/>
+          <actionMethod actionName="boleto"/>
         </controllerFile>
         <controllerFile controllerName="ProtecaoAoCredito">
           <actionMethod actionName="index"/>
@@ -128,6 +129,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Compra">
             <viewScriptFile forActionName="sucesso"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Banco">
+            <viewScriptFile forActionName="boleto"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

@@ -53,7 +53,7 @@ class CompraController extends Zend_Controller_Action
             if ($forma_de_pagamento == 'cc') {
                 $redirector->gotoUrl("/cc/comprar/");
             } else {
-                $redirector->gotoUrl("/banco/comprar/");
+                $redirector->gotoUrl("/banco/boleto/");
             }
         }
 
