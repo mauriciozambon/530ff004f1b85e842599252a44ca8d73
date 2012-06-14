@@ -17,6 +17,10 @@ class CCController extends Zend_Controller_Action {
     }
 
     public function comprarAction() {
+//        $reqparams = array("CPF" => '44587629405');
+//        $result = Helpers_Connector::requestSoapService('clientes', 'buscaPotencialCliente', array($reqparams));
+//        print_r($result);
+        $this->view->potencial = "medio";
         if ($this->getRequest()->isPost()) {
             $total = Helpers_Session::getInstance()->getSessVar('preco_produto') + Helpers_Session::getInstance()->getSessVar('preco_frete');
             $params = $this->_request->getParams();

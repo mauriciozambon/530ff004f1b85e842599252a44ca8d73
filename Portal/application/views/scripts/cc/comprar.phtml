@@ -15,7 +15,10 @@
             <label>Nome do Titular</label><br/>
             <input type="text" name="titular" id="titular"><br/><br/>
             <label>Bandeira do Cartão</label><br/>
-            <input type="text" name="bandeira" id="bandeira"><br/><br/>
+            <select name="bandeira" id="bandeira">
+                <option value="VISA">Visa</option>
+                <option value="MASTERCARD">Mastercard</option>
+            </select><br/><br/>
             <label>Número do Cartão</label><br/>
             <input type="text" name="numero" id="numero"><br/><br/>
             <label>Data de Validade</label><br/>
@@ -23,11 +26,31 @@
             <label>Código de Segurança</label><br/>
             <input type="text" name="codigo" id="codigo"><br/><br/>
             <label>Número de Parcelas</label><br/>
-			<select id="parcelas" name="parcelas">
-		        <option value="1">1</option>
-		        <option value="2">2</option>
-				<option value="3">3</option>
-		    </select><br/>
+            <select id="parcelas" name="parcelas">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <?php if ($this->potencial != "baixo"): ?>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <?php if ($this->potencial != "medio"): ?>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <?php if ($this->potencial != "alto"): ?>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                        <?php endif; ?>                        
+                    <?php endif; ?>
+
+                <?php endif; ?>
+
+
+
+            </select><br/>
             <br/>
             <div id="buttons">
                 <input class="large awesome orange" type="submit" value="Finalizar" />

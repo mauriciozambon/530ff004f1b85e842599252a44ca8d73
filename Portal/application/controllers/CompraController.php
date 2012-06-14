@@ -22,6 +22,7 @@ class CompraController extends Zend_Controller_Action
                 $address = array();
                 $address['Logradouro'] = $tmp->address->logradouro;
                 $address['Número'] = $this->_request->getParam('numero');
+                $address['Complemento'] = $this->_request->getParam('complemento');
                 $address['Bairro'] = $tmp->address->bairro;
                 $address['Cidade'] = $tmp->address->localidade;
                 $address['Estado'] = $tmp->address->uf;

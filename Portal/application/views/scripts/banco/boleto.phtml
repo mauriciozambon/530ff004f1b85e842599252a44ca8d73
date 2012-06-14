@@ -10,18 +10,7 @@
 
     <b>Valor da Compra: </b><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto') + Helpers_Session::getInstance()->getSessVar('preco_frete'); ?><br/><br/>
 
-    <div class="form">
-        <form action="" method="POST">
-            <label>Agência</label><br/>
-            <input type="text" name="agencia" id="agencia"><br/>
-            <label>Conta</label><br/>
-            <input type="text" name="conta" id="conta"><br/>
-            <br/>
-            <div id="buttons">
-                <input class="large awesome orange" type="submit" value="Finalizar" />
-            </div><br/>
-        </form>
-    </div>
+    <h3>Parabéns! Seu pedido foi confirmado. Assim que recebermos a confirmação do pagamento, enviaremos o(s) produto(s).</h3>
     
     *O boleto será enviado para o seu e-mail.
 
