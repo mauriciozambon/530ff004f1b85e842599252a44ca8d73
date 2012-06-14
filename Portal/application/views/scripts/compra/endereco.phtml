@@ -1,7 +1,5 @@
-<?php if (!isset($this->endereco)): ?>
 <div class="view">
-
-    <h3>Endereço de Entrega</h3>
+	<h3>Endereço de Entrega</h3>
 
     <?php if (isset($this->error) && $this->error != ""): ?>
         <div class="error">
@@ -9,25 +7,32 @@
         </div><br />
     <?php endif; ?>
 
+	<?php if (!isset($this->endereco)): ?>
     <div class="form">
-        <form action="" method="POST">
+        <form action="" method="POST" id="login_form">
             <label>CEP</label><br/>
-            <input type="text" name="cep" id="cep" value="58407-035"><br/>
+            <input type="text" name="cep" id="cep" value="58407-035"><br/><br/>
             <label>Número</label><br/>
             <input type="text" name="numero" id="numero"><br/><br/>
             <div id="buttons">
                 <input class="large awesome orange" type="submit" value="Pesquisar" />
             </div><br/>
         </form>
+	</div>
+	
+	<div class="info">
+		<?php else: ?>
+		<table class="info">
+		<?php foreach($this->endereco as $field => $value) {
+		    echo "<tr><td>$field: </td><td>$value</td></td>";
+		} ?>
+		</table>
+		<br/>
+		<div id="buttons">
+		<a style="margin-right: 10px;" href ="<?php echo $this->baseUrl(); ?>/Compra/pagamento/id/<?php echo $this->detalhes[0]; ?>" class="large awesome orange" id="voltar" />Voltar</a>
+		<a style="margin-left: 10px;" href ="<?php echo $this->baseUrl(); ?>/Compra/pagamento/" class="large awesome orange" id="prosseguir" />Prosseguir</a>
+		</div>
+		<br/><br/>
+		<?php endif; ?>
     </div>
 </div>
-<?php else: ?>
-<table>
-<?php foreach($this->endereco as $field => $value) {
-    echo "<tr><td>$field</td><td>$value</td></td>";
-} ?>
-
-</table>
-<a href ="<?php echo $this->baseUrl(); ?>/Compra/pagamento/id/<?php echo $this->detalhes[0]; ?>" class="large awesome orange" id="voltar" />Voltar</a>
-<a href ="<?php echo $this->baseUrl(); ?>/Compra/pagamento/" class="large awesome orange" id="prosseguir" />Prosseguir</a>
-<?php endif; ?>

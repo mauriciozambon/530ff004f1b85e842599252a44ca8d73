@@ -1,27 +1,36 @@
-<table>
+<div class="view">
+	<h3>Método de Pagamento</h3>
+<table class="info">
     <tr>
-        <td>Preço do Produto</td>
+        <td>Preço do Produto: </td>
         <td><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto'); ?></td>
     </tr>
     <tr>
-        <td>Frete</td>
+        <td>Frete: </td>
         <td><?php echo Helpers_Session::getInstance()->getSessVar('preco_frete'); ?></td>
     </tr>
     <tr>
-        <td>Total</td>
+        <td>Total: </td>
         <td><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto') + Helpers_Session::getInstance()->getSessVar('preco_frete'); ?></td>
     </tr>
 </table>
+<br/>
 
-<form action="" method="POST">
+<div class="form">
+<form action="" method="POST" id="login_form">
+	<label>Método de Pagamento</label><br/>
     <select id="forma_de_pagamento" name="forma_de_pagamento">
         <option value="banco">Banco</option>
         <?php if ($this->situacao_cpf == 'regular'): ?>
             <option value="cc">Cartão de Crédito</option>
         <?php endif; ?>
     </select>
-
+	<br/>
+	<br/>
     <div id="buttons">
         <input class="large awesome orange" type="submit" value="Selecionar" />
     </div>
+	<br/><br/>
 </form>
+</div>
+</div>

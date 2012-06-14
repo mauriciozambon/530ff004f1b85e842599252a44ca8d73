@@ -8,26 +8,30 @@
         </div><br />
     <?php endif; ?>
 
-    <b>Valor da Compra: </b><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto') + Helpers_Session::getInstance()->getSessVar('preco_frete'); ?><br/><br/>
+    <h2><b>Valor da Compra: </b><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto') + Helpers_Session::getInstance()->getSessVar('preco_frete'); ?></h2><br/><br/>
 
     <div class="form">
-        <form action="" method="POST">
+        <form action="" method="POST" id="login_form">
             <label>Nome do Titular</label><br/>
-            <input type="text" name="titular" id="titular"><br/>
+            <input type="text" name="titular" id="titular"><br/><br/>
             <label>Bandeira do Cartão</label><br/>
-            <input type="text" name="bandeira" id="bandeira"><br/>
+            <input type="text" name="bandeira" id="bandeira"><br/><br/>
             <label>Número do Cartão</label><br/>
-            <input type="text" name="numero" id="numero"><br/>
+            <input type="text" name="numero" id="numero"><br/><br/>
             <label>Data de Validade</label><br/>
-            <input type="text" name="validade" id="validade"><br/>
+            <input type="text" name="validade" id="validade"><br/><br/>
             <label>Código de Segurança</label><br/>
-            <input type="text" name="codigo" id="codigo"><br/>
+            <input type="text" name="codigo" id="codigo"><br/><br/>
             <label>Número de Parcelas</label><br/>
-            <input type="text" name="parcelas" id="parcelas"><br/>
+			<select id="parcelas" name="parcelas">
+		        <option value="1">1</option>
+		        <option value="2">2</option>
+				<option value="3">3</option>
+		    </select><br/>
             <br/>
             <div id="buttons">
                 <input class="large awesome orange" type="submit" value="Finalizar" />
-            </div><br/>
+            </div><br/><br/>
         </form>
     </div>
 

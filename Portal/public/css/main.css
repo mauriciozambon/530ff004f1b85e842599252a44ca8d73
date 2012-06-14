@@ -3,8 +3,9 @@ html, body {
     height:100%;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 12px !important;
+    font: 67.5% 'Lucida Sans Unicode', 'Bitstream Vera Sans',
+	        'Trebuchet Unicode MS', 'Lucida Grande', Verdana, Helvetica,
+	        sans-serif;
     font-smooth:  always !important;
 }
 
@@ -74,7 +75,9 @@ a {
     background-repeat: repeat-x;
     text-align: right;
     width: 100%;
-
+	font-size: 13px;
+	font-variant: small-caps;
+	font-weight: bolder;
 }
 
 div#logo {
@@ -92,17 +95,26 @@ img#logo {
 #login_form input[type=text] {
     width: 250px;
     line-height: 25px;
-    font-size: 16px;
+    font-size: 13px;
     border-radius:5px;
     padding-left: 3px;
 }
 
 #login_form label {
-    font-size: 16px;
+    font-size: 14px;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: bolder;
+	font-variant: small-caps;
 }
 
 div.view {
-    width: 300px;
+    min-width: 300px;
+	max-width: 400px;
     margin: auto;
     text-align: center !important;
     background-image: url(../img/view.png);
@@ -307,4 +319,28 @@ td.prod_name {
 #table-5 tr:hover {
 	background-color: #fff;
         cursor: pointer;
+}
+
+table.info {
+	font-size: 13px;
+	width:100%;
+}
+
+table.info td {
+	text-align: left;
+}
+
+table.info td:first-child {
+	font-weight: bolder;
+	text-align: right;
+	width:50%;
+}
+
+div.info {
+	width: 100%;
+	text-align: center;
+}
+
+h2 {
+	font-size: 14px;
 }
