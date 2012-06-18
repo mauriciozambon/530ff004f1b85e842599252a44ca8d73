@@ -8,10 +8,18 @@
         </div><br />
     <?php endif; ?>
 
-    <b>Valor da Compra: </b><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto') + Helpers_Session::getInstance()->getSessVar('preco_frete'); ?><br/><br/>
+    <?php 
+        $frete = Helpers_Session::getInstance()->getSessVar('preco_frete');
+        $preco = Helpers_Session::getInstance()->getSessVar('preco_produto');
+    ?>
+    <b>Valor da Compra: </b><?php echo $preco + $frete; ?><br/><br/>
 
     <h3>Parabéns! Seu pedido foi confirmado. Assim que recebermos a confirmação do pagamento, enviaremos o(s) produto(s).</h3>
     
-    *O boleto será enviado para o seu e-mail.
+    <p>ID da transação: <?php echo $this->pagto->PagarViaBoletoBancarioResult; ?></p>
+    <p>Use esse número para confirmar seu pagamento.</p>
+
+    
+    <p>*O boleto será enviado para o seu e-mail.</p>
 
 </div>

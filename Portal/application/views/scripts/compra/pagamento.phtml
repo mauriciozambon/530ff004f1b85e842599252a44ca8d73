@@ -2,16 +2,20 @@
 	<h3>Método de Pagamento</h3>
 <table class="info">
     <tr>
+        <?php
+            $preco = Helpers_Session::getInstance()->getSessVar('preco_produto');
+            $frete = Helpers_Session::getInstance()->getSessVar('preco_frete');
+        ?>
         <td>Preço do Produto: </td>
-        <td><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto'); ?></td>
+        <td><?php echo floatval($preco); ?></td>
     </tr>
     <tr>
         <td>Frete: </td>
-        <td><?php echo Helpers_Session::getInstance()->getSessVar('preco_frete'); ?></td>
+        <td><?php echo floatval($frete); ?></td>
     </tr>
     <tr>
         <td>Total: </td>
-        <td><?php echo Helpers_Session::getInstance()->getSessVar('preco_produto') + Helpers_Session::getInstance()->getSessVar('preco_frete'); ?></td>
+        <td><?php echo floatval($preco + $frete); ?></td>
     </tr>
 </table>
 <br/>

@@ -133,6 +133,9 @@
           <viewControllerScriptsDirectory forControllerName="Banco">
             <viewScriptFile forActionName="boleto"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="cliente">
+            <viewScriptFile forActionName="buscaInformacoes"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>

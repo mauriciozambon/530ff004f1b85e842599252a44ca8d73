@@ -14,11 +14,11 @@
 
                 echo "<td><a class='fancybox-effects-d' href='" . $this->imagens[$id][0][1] . "' rel='lightbox' title='" . $this->imagens[$id][0][2] . "'><img class='prod_thumb' src='" . $this->imagens[$id][0][0] . "'/></a></td>";
                 echo "<td><a href='" . $this->baseUrl() . "/produtos/detalhes/id/" . $produto[0] . "'>" . $produto[1] . "</a></td>";
-                //if ($this->preco[$id]->ReturnProductInfoResult->Price == 0) {
+                if ($this->preco[$id]->ReturnProductInfoResult->Price == 0) {
                     echo "<td>Indisponível</td>";
-                //} else {
-                    //echo "<td>" . $this->preco[$id]->ReturnProductInfoResult->Price . ",00</td>";
-               // }
+                } else {
+                    echo "<td>" . $this->preco[$id]->ReturnProductInfoResult->Price . ",00</td>";
+                }
                 echo "</tr>";
             }
             ?>

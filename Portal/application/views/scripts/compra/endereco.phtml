@@ -11,11 +11,11 @@
     <div class="form">
         <form action="" method="POST" id="login_form">
             <label>CEP</label><br/>
-            <input type="text" name="cep" id="cep" value="58407-035"><br/><br/>
+            <input type="text" name="cep" id="cep" value="<?php echo $this->cliente->return->CEP; ?>"><br/><br/>
             <label>Número</label><br/>
-            <input type="text" name="numero" id="numero"><br/><br/>
+            <input type="text" name="numero" id="numero" value="<?php echo $this->cliente->return->numeroEndereco;?>"><br/><br/>
             <label>Complemento</label><br/>
-            <input type="text" name="complemento" id="complemento"><br/><br/>
+            <input type="text" name="complemento" id="complemento" value="<?php echo $this->cliente->return->complementoEndereco;?>"><br/><br/>
             <div id="buttons">
                 <input class="large awesome orange" type="submit" value="Pesquisar" />
             </div><br/>
@@ -31,7 +31,13 @@
 		</table>
 		<br/>
 		<div id="buttons">
-		<a style="margin-right: 10px;" href ="<?php echo $this->baseUrl(); ?>/Compra/pagamento/id/<?php echo $this->detalhes[0]; ?>" class="large awesome orange" id="voltar" />Voltar</a>
+        <?php $id = Helpers_Session::getInstance()->getSessVar('produto_id'); ?>
+		<a style="margin-right: 10px;" 
+                    href ="<?php echo $this->baseUrl(); ?>/Compra/endereco/id/<?php echo $id; ?>" 
+                    class="large awesome orange" 
+                    id="voltar" />
+           Voltar
+        </a>
 		<a style="margin-left: 10px;" href ="<?php echo $this->baseUrl(); ?>/Compra/pagamento/" class="large awesome orange" id="prosseguir" />Prosseguir</a>
 		</div>
 		<br/><br/>

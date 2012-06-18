@@ -27,22 +27,45 @@ class CompraController extends Zend_Controller_Action
                 $address['Cidade'] = $tmp->address->localidade;
                 $address['Estado'] = $tmp->address->uf;
                 $address['CEP'] = $tmp->address->cep;
-                $address['Frete'] = '70';
-                $address['Prazo para entrega'] = '10 dias';
 
-                Helpers_Session::getInstance()->setSessVar('preco_frete', 70);
+                $id = Helpers_Session::getInstance()->getSessVar('produto_id');
+                $produto = Helpers_Connector::requestSoapService('produtos', 'exibeDetalhesID', array($id));
+                $peso = $produto[7];
+                //calculo do volume e conversao para m^3.
+                $volume = ($produto[8] * $produto[9] * $produto[10])/1000000;
 
-                /* $params = array('peso' => '1',
-                  'volume' => '1',
-                  'cep' => '12000111','
-                  'modo_entrega' => '1');
-                  $result = Helpers_Connector::requestSoapService('logistica', 'calculaFrete', array($params)); */
+                $params = array('peso' => $peso,
+                                'volume' => $volume,
+                                'cep' => $address['CEP'],
+                                'modo_entrega' => '1');
+                $result = Helpers_Connector::requestSoapService('logistica', 'calculaFrete', array($params));
+
+                Helpers_Session::getInstance()->setSessVar('preco_frete', $result->calculaFreteReturn[1]);
+                $address['Frete'] = $result->calculaFreteReturn[1];
+                $address['Prazo para entrega'] = $result->calculaFreteReturn[2] . 'dias';
+                
+
                 $this->view->assign('endereco', $address);
             } else {
                 $this->view->assign('erro', 'Endereço não encontrado.');
             }
         }
-        
+        else{
+            $id = $this->_request->getParam('id');
+
+            $prod = Helpers_Session::getInstance()->getSessVar('produto_id');
+            Helpers_Session::getInstance()->setSessVar('produto_id', $id);
+
+            $cpf = Helpers_Session::getInstance()->getSessVar('cpf');
+            if(!isset($cpf)){
+                $redir = $this->getHelper('redirector');
+                $redir->gotoUrl('login/index/id/' . $id);
+            }
+
+            $params = array('CPF' => $cpf);
+            $cliente = Helpers_Connector::requestSoapService('clientes', 'buscaInformacoesCliente', array('buscaInformacoesCliente' => $params));
+            $this->view->assign('cliente', $cliente);
+        }
     }
 
     public function pagamentoAction()
@@ -58,8 +81,8 @@ class CompraController extends Zend_Controller_Action
             }
         }
 
-        $cpf = $this->_request->getParam('cpf');
-        $cpf = '78535464670';
+        $cpf = Helpers_Session::getInstance()->getSessVar('cpf');
+        //$cpf = '78535464670';
 
         $situacao = Helpers_Connector::requestSoapService('protecao', 'consultaCPF', array('consultaCPF' => array("CPF" => $cpf)));
 
@@ -70,9 +93,5 @@ class CompraController extends Zend_Controller_Action
     {
         // action body
     }
-
-
 }
-
-
 

@@ -5,7 +5,11 @@
     <tr>
         <td rowspan="9" class="photos">
             <div id="comprar">
+                <?php if($this->preco->ReturnProductInfoResult->Quantity > 0): ?>
                 <a href ="<?php echo $this->baseUrl(); ?>/Compra/endereco/id/<?php echo $this->detalhes[0]; ?>" class="large awesome orange" id="comprar" />Comprar</a>
+                <?php else: ?>
+                <span class="large awesome orange">Produto Indisponivel</span>
+                <?php endif;?>
             </div>
             <?php foreach ($this->imagens as $imagem): ?>
                 <a class ="fancybox-effects-d" href="<?php echo $imagem[1]; ?>" rel="lightbox" title="<?php echo $imagem[2]; ?>"><img class="prod_thumb" src="<?php echo $imagem[0]; ?>"/></a>

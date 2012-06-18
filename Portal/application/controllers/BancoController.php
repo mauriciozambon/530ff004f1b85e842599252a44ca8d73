@@ -32,16 +32,13 @@ class BancoController extends Zend_Controller_Action {
     }
 
     public function boletoAction() {
-        if ($this->getRequest()->isPost()) {
-            $params = array('agencia' => $this->_request->getParam('agencia'),
-                'conta' => $this->_request->getParam('conta'),
-                'valor' => $this->_request->getParam('valor'));
-            $result = Helpers_Connector::requestSoapService('banco', 'PagarViaBoletoBancario', array('PagarViaBoletoBancario' => $params));
-
-            $redirector = $this->getHelper('redirector');
-            $redirector->gotoUrl("/compra/sucesso/");
-        }
+        $preco = Helpers_Session::getInstance()->getSessVar('preco_produto');
+        $frete = Helpers_Session::getInstance()->getSessVar('preco_frete');
+        $params = array('agencia' => '001',
+                        'conta' => '111.222.333-0',
+                        'valor' => $preco + $frete);
+        $result = Helpers_Connector::requestSoapService('banco', 'PagarViaBoletoBancario', array('PagarViaBoletoBancario' => $params));
+        $this->view->assign('pagto', $result);
     }
-
 }
 

@@ -12,7 +12,7 @@ class LoginController extends Zend_Controller_Action {
         
         if ($authenticated) {  //Usuário já logado
             $redirector = $this->getHelper('redirector');
-            $redirector->gotoUrl($this->view->baseUrl() . "/produtos/listar/categoria/1");
+            $redirector->gotoUrl("");
         }
 
         if ($this->getRequest()->isPost()) {    //Se o form foi submetido: 
@@ -24,9 +24,20 @@ class LoginController extends Zend_Controller_Action {
                 $session->setSessVar("authenticated", true);
                 $session->setSessVar("cpf", $params['cpf']);                
                 $redirector = $this->getHelper('redirector');
-                $redirector->gotoUrl($this->view->baseUrl() . "/produtos/listar/categoria/1");
+                if(isset($params['id'])){
+                    $redirector->gotoUrl('compra/endereco/id/' . $params['id']);
+                }
+                else{
+                    $redirector->gotoUrl("");
+                }
             } else {
                 $this->view->error = $auth;
+            }
+        }
+        else{
+            $id = $this->_request->getParam('id');
+            if(isset($id)){
+                $this->view->assign('id', $id);
             }
         }
     }
@@ -34,6 +45,8 @@ class LoginController extends Zend_Controller_Action {
     public function logoutAction() {
         //Kills the mothafucka's session
         Helpers_Session::getInstance()->sessDestroy();
+        $redir = $this->getHelper('redirector');
+        $redir->gotoUrl('');
     }
 
 }

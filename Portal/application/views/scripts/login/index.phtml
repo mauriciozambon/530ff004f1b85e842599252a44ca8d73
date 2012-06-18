@@ -10,6 +10,9 @@
 
     <div class="form">
         <form id="login_form" action="" method="POST">
+            <?php if(isset($this->id)): ?>
+               <input type='hidden' name="id" value="<?php echo $this->id; ?>" />
+            <?php endif; ?>
             <label>CPF</label><br/>
             <input type="text" name="cpf" id="cpf" size="15" /><br /><br />
             <label>Senha</label><br/>
