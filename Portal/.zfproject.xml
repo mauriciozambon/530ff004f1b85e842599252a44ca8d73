@@ -136,6 +136,15 @@
           <viewControllerScriptsDirectory forControllerName="cliente">
             <viewScriptFile forActionName="buscaInformacoes"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Compra">
+            <viewScriptFile forActionName="confirma"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="banco">
+            <viewScriptFile forActionName="deposito"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="banco">
+            <viewScriptFile forActionName="status"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>

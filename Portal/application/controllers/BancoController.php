@@ -12,10 +12,10 @@ class BancoController extends Zend_Controller_Action {
 
     public function depositoAction() {
         // action body
-        $params = array('agencia' => 1,
-            'conta' => 12,
-            'valor' => 123.1);
-        $result = Helpers_Connector::requestSoapService('banco2', 'PagarViaDepositoBancario', array('PagarViaDepositoBancario' => $params));
+        $params = array('agencia' => 7,
+            'conta' => 74774701,
+            'valor' => 100);
+        $result = Helpers_Connector::requestSoapService('banco', 'PagarViaDepositoBancario', array('PagarViaDepositoBancario' => $params));
         var_dump($result);
     }
 
@@ -25,6 +25,9 @@ class BancoController extends Zend_Controller_Action {
 
     public function statusAction() {
         // action body
+        $params = array('idPagamento' => 178);
+        $result = Helpers_Connector::requestSoapService('banco', 'VerificaStatusPagamento', array('VerificaStatusPagamento' => $params));
+        var_dump($result);
     }
 
     public function cancelarAction() {

@@ -34,6 +34,11 @@ class CompraController extends Zend_Controller_Action
                 //calculo do volume e conversao para m^3.
                 $volume = ($produto[8] * $produto[9] * $produto[10])/1000000;
 
+                $dados = array();
+                $dados['volume'] = $volume;
+                $dados['peso'] = $peso;
+                Helpers_Session::getInstance()->setSessVar('dados_produto', $dados);
+
                 $params = array('peso' => $peso,
                                 'volume' => $volume,
                                 'cep' => $address['CEP'],
@@ -43,7 +48,8 @@ class CompraController extends Zend_Controller_Action
                 Helpers_Session::getInstance()->setSessVar('preco_frete', $result->calculaFreteReturn[1]);
                 $address['Frete'] = $result->calculaFreteReturn[1];
                 $address['Prazo para entrega'] = $result->calculaFreteReturn[2] . 'dias';
-                
+
+                Helpers_Session::getInstance()->setSessVar('endereco', $address);                
 
                 $this->view->assign('endereco', $address);
             } else {
@@ -92,6 +98,20 @@ class CompraController extends Zend_Controller_Action
     public function sucessoAction()
     {
         // action body
+        $addr = Helpers_Session::getInstance()->getSessVar('endereco');
+        $prod = Helpers_Session::getInstance()->getSessVar('produto_id');
+        $data = Helpers_Session::getInstance()->getSessVar('dados_produto');
+
+        $params = array('peso' => $data['peso'],
+                        'volume' => $data['volume'],
+                        'cep' => $addr['CEP'],
+                        'meio' => '1',
+                        'id_NotaFiscal' => '1');
+        $result_frete = Helpers_Connector::requestSoapService('logistica', 'webserviceTransporte', array($params));
+        $result_estoque = Helpers_Connector::requestSoapService('estoque', 'SubProduct', array(array('ID' => $prod, 'qtd' => 1)));
+
+        //print_r($result_frete);
+        //print_r($result_estoque);
     }
 }
 
